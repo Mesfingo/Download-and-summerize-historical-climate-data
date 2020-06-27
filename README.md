@@ -1,3 +1,3 @@
 # Download-and-summerize-historical-climate-data
 The functions described here can be used to download summerize historical climate data from the NOAA.
-
+For a given sampling location, environmental data recorded in the closest shortlisted station was retrieved from the NCDC GSOD FTP server (ftp://ftp.ncdc.noaa.gov/pub/data/gsod/) using the function ‘get_GSOD’ in the GSODR package. If the proportion of missing values in the retrieved data was less than 10%, it was used for subsequent analysis. However, if the proportion of missing values was greater than 10%, data was retrieved again from the next closest station. This process was repeated until data with less than 10% missingness was found or the fifth closest station was reached. If none of the five closest stations had data with less than 10% missingness, data with the least missingness from these five station was used in subsequent analysis.
